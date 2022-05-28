@@ -19,7 +19,8 @@
       "@pacto/ui": ["libs/ui/src/index.ts"],
       "@pacto/treino-api": ["libs/treino-api/src/index.ts"],
       "@pacto/adm-core-api": ["libs/adm-core-api/src/index.ts"],
-      "@pacto/adm-contratos-api": ["libs/adm-contratos-api/src/index.ts"]
+      "@pacto/adm-contratos-api": ["libs/adm-contratos-api/src/index.ts"],
+      "@pacto/sdk": ["libs/sdk/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

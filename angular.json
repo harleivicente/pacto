@@ -364,6 +364,37 @@
           "styleext": "scss"
         }
       }
+    },
+    "sdk": {
+      "projectType": "library",
+      "root": "libs/sdk",
+      "sourceRoot": "libs/sdk/src",
+      "prefix": "pacto",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/sdk/tsconfig.lib.json",
+              "libs/sdk/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/sdk/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/sdk/jest.config.js",
+            "tsConfig": "libs/sdk/tsconfig.spec.json",
+            "setupFile": "libs/sdk/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

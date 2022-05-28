@@ -36,6 +36,9 @@
     },
     "adm-contratos-api": {
       "tags": []
+    },
+    "sdk": {
+      "tags": []
     }
   }
 }
