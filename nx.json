@@ -24,6 +24,9 @@
     "adm-e2e": {
       "tags": [],
       "implicitDependencies": ["adm"]
+    },
+    "ui": {
+      "tags": []
     }
   }
 }
