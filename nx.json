@@ -17,6 +17,13 @@
     "treino-e2e": {
       "tags": [],
       "implicitDependencies": ["treino"]
+    },
+    "adm": {
+      "tags": []
+    },
+    "adm-e2e": {
+      "tags": [],
+      "implicitDependencies": ["adm"]
     }
   }
 }
