@@ -14,6 +14,6 @@ export const platafatormaConfig: PlataformaAplicacao[] = [
     {
         id: 'adm',
         name: 'ADM',
-        url: 'http://localhost:4200'
+        url: 'http://localhost:4300'
     }
 ];
