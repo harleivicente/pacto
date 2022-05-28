@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { platafatormaConfig } from '@pacto/sdk';
 import { TreinoApiFichasService } from '@pacto/treino-api';
+import { AdmCoreApiAlunosService } from '@pacto/adm-core-api';
 @Component({
   selector: 'pacto-root',
   templateUrl: './app.component.html',
@@ -9,6 +10,7 @@ import { TreinoApiFichasService } from '@pacto/treino-api';
 export class AppComponent implements OnInit {
   title = 'treino';
   fichas = [];
+  alunos = [];
 
   get menuConfig() {
     return platafatormaConfig.map(config => {
@@ -19,10 +21,14 @@ export class AppComponent implements OnInit {
     });
   }
 
-  constructor(private treinoApiFichasService: TreinoApiFichasService) {}
+  constructor(
+    private treinoApiFichasService: TreinoApiFichasService,
+    private admCoreApiAlunosService: AdmCoreApiAlunosService
+  ) {}
 
   ngOnInit() {
     this.treinoApiFichasService.obterFichas().subscribe(fichas => this.fichas = fichas);
+    this.admCoreApiAlunosService.obterAlunos().subscribe(alunos => this.alunos = alunos);
   }
 
 }
