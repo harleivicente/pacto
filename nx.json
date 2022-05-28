@@ -27,6 +27,15 @@
     },
     "ui": {
       "tags": []
+    },
+    "treino-api": {
+      "tags": []
+    },
+    "adm-core-api": {
+      "tags": []
+    },
+    "adm-contratos-api": {
+      "tags": []
     }
   }
 }

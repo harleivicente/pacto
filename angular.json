@@ -271,6 +271,99 @@
           "styleext": "scss"
         }
       }
+    },
+    "treino-api": {
+      "projectType": "library",
+      "root": "libs/treino-api",
+      "sourceRoot": "libs/treino-api/src",
+      "prefix": "pacto",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/treino-api/tsconfig.lib.json",
+              "libs/treino-api/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/treino-api/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/treino-api/jest.config.js",
+            "tsConfig": "libs/treino-api/tsconfig.spec.json",
+            "setupFile": "libs/treino-api/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "adm-core-api": {
+      "projectType": "library",
+      "root": "libs/adm-core-api",
+      "sourceRoot": "libs/adm-core-api/src",
+      "prefix": "pacto",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/adm-core-api/tsconfig.lib.json",
+              "libs/adm-core-api/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/adm-core-api/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/adm-core-api/jest.config.js",
+            "tsConfig": "libs/adm-core-api/tsconfig.spec.json",
+            "setupFile": "libs/adm-core-api/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "adm-contratos-api": {
+      "projectType": "library",
+      "root": "libs/adm-contratos-api",
+      "sourceRoot": "libs/adm-contratos-api/src",
+      "prefix": "pacto",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/adm-contratos-api/tsconfig.lib.json",
+              "libs/adm-contratos-api/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/adm-contratos-api/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/adm-contratos-api/jest.config.js",
+            "tsConfig": "libs/adm-contratos-api/tsconfig.spec.json",
+            "setupFile": "libs/adm-contratos-api/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {
