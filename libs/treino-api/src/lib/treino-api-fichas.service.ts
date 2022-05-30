@@ -1,15 +1,23 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Optional } from '@angular/core';
 import { of } from 'rxjs';
 import { TreinoApiModule } from './treino-api.module';
+import { BaseAdapterConfigProviderService } from '@pacto/sdk';
 
 @Injectable({
   providedIn: TreinoApiModule
 })
 export class TreinoApiFichasService {
 
-  constructor() {}
-
+  constructor(
+    @Optional() private config: BaseAdapterConfigProviderService
+  ) {}
+  
   obterFichas() {
+    
+    if (!this.config) {
+      throw Error('Config Provider was not provided');
+    }
+
     return of([
       {
         id: 1,

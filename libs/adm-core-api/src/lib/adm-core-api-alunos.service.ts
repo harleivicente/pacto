@@ -1,15 +1,24 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Optional } from '@angular/core';
 import { of } from 'rxjs';
 import { AdmCoreApiModule } from './adm-core-api.module';
+import { BaseAdapterConfigProviderService } from '@pacto/sdk';
 
 @Injectable({
   providedIn: AdmCoreApiModule
 })
 export class AdmCoreApiAlunosService {
 
-  constructor() {}
+  constructor(
+    @Optional() private config: BaseAdapterConfigProviderService
+  ) {
+  }
 
   obterAlunos() {
+
+    if (!this.config) {
+      throw Error('Config Provider was not provided');
+    }
+
     return of([
       {
         id: 1,
