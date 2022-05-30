@@ -12,33 +12,33 @@
   },
   "projects": {
     "treino": {
-      "tags": []
+      "tags": ["type:app"]
     },
     "treino-e2e": {
-      "tags": [],
+      "tags": ["type:app"],
       "implicitDependencies": ["treino"]
     },
     "adm": {
-      "tags": []
+      "tags": ["type:app"]
     },
     "adm-e2e": {
       "tags": [],
       "implicitDependencies": ["adm"]
     },
     "ui": {
-      "tags": []
+      "tags": ["type:ui"]
     },
     "treino-api": {
-      "tags": []
+      "tags": ["type:api"]
     },
     "adm-core-api": {
-      "tags": []
+      "tags": ["type:api"]
     },
     "adm-contratos-api": {
-      "tags": []
+      "tags": ["type:api"]
     },
     "sdk": {
-      "tags": []
+      "tags": ["type:utils"]
     }
   }
 }

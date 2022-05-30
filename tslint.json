@@ -56,9 +56,29 @@
         "enforceBuildableLibDependency": true,
         "allow": [],
         "depConstraints": [
+          /* 
+              Aplicações podem fazer o ouso de bilioteca de componente,
+              utilitarios e adaters de api.
+          */
           {
-            "sourceTag": "*",
-            "onlyDependOnLibsWithTags": ["*"]
+            "sourceTag": "type:app",
+            "onlyDependOnLibsWithTags": [
+              "type:ui",
+              "type:utils",
+              "type:api"
+            ]
+          },
+          {
+            "sourceTag": "type:ui",
+            "onlyDependOnLibsWithTags": ["type:utils"]
+          },
+          {
+            "sourceTag": "type:api",
+            "onlyDependOnLibsWithTags": ["type:utils"]
+          },
+          {
+            "sourceTag": "type:utils",
+            "onlyDependOnLibsWithTags": ["type:utils"]
           }
         ]
       }
