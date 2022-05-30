@@ -1,13 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { UiModule } from '@pacto/ui';
+
+import { AdmContratosApiModule, ADM_CONTRATO_API_URL } from '@pacto/adm-contratos-api';
+import { AdmCoreApiModule, ADM_CORE_API_URL } from '@pacto/adm-core-api';
 import { BaseAdapterConfigProviderService } from '@pacto/sdk';
-import { AdmCoreApiModule } from '@pacto/adm-core-api';
-import { AdmContratosApiModule } from '@pacto/adm-contratos-api';
+import { UiModule } from '@pacto/ui';
 
 import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
 import { ApiConfigProviderService } from './api-config-provider.service';
+
+const apiUrl = {
+  admCoreApi: `https://adm-core.pactosolucoes.com.br`,
+  admContratosApi: `https://adm-contratos.pactosolucoes.com.br`
+};
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,8 +26,11 @@ import { ApiConfigProviderService } from './api-config-provider.service';
   ],
   providers: [
     {
-      provide: BaseAdapterConfigProviderService, useClass: ApiConfigProviderService
-    }
+      provide: BaseAdapterConfigProviderService,
+      useClass: ApiConfigProviderService
+    },
+    { provide: ADM_CORE_API_URL, useValue: apiUrl.admCoreApi },
+    { provide: ADM_CONTRATO_API_URL, useValue: apiUrl.admContratosApi }
   ],
   bootstrap: [AppComponent]
 })

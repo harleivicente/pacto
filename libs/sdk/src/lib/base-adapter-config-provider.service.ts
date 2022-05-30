@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
 export interface BaseAdapterConfig {
-  url: string;
   token: string;
+  empresaId: string;
 }
 
 @Injectable()
